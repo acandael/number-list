@@ -20,7 +20,21 @@ const AddNumber = (props: AppProps): JSX.Element => {
     setValue('');
   };
 
-  return <div>Add Number</div>;
+  return (
+    <form onSubmit={submitHandler}>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => {
+          const newValue = e.target.value;
+          if (regexp.test(newValue)) {
+            setValue(e.target.value);
+          }
+        }}
+      ></input>
+      <button>Add Number</button>
+    </form>
+  );
 };
 
 export default AddNumber;
