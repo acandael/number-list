@@ -10,7 +10,7 @@ const NumberList = (props: AppProps): JSX.Element => {
   const [selected, setSelected] = useState(0);
   const [activeButton, setActiveButton] = useState('');
 
-  const deleteSelected = (value) => {
+  const deleteSelected = (value: number) => {
     props.removeNumberFromList(value);
     setActiveButton('');
   };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AddNumber from './AddNumber';
 import NumberList from './NumberList';
+import TotalValue from './TotalValue';
 
 const App = (): JSX.Element => {
   const [valuesList, setValuesList] = useState<number[]>([]);
@@ -30,6 +31,7 @@ const App = (): JSX.Element => {
           }
         </div>
       }
+      {<div>{<TotalValue valuesList={valuesList} />}</div>}
     </div>
   );
 };
