@@ -10,28 +10,46 @@ const App = (): JSX.Element => {
     setValuesList((prev) => prev.concat(num));
   };
 
-  const deleteNumberFromList = (num: number) => {
-    setValuesList(valuesList.filter((e) => e !== num));
+  const removeFirstFoundval = (arr: number[], num: number): number[] => {
+    const idx = arr.indexOf(num);
+
+    if (idx === -1) {
+      return [...arr];
+    }
+
+    return arr.filter((el, i) => i !== idx);
+  };
+
+  const removeNumberFromList = (num: number) => {
+    setValuesList((prev) => removeFirstFoundval(prev, num));
   };
 
   return (
-    <div>
-      {
-        <div>
-          <AddNumber valuesList={valuesList} setValuesList={addNumberToList} />
+    <div className="ui container">
+      <div className="ui two column grid">
+        <div className="row">
+          <div className="ui column">
+            <div className="ui medium header">My Sum</div>
+          </div>
         </div>
-      }
-      {
-        <div>
+        <div className="row">
           {
-            <NumberList
+            <AddNumber
               valuesList={valuesList}
-              removeNumberFromList={deleteNumberFromList}
+              setValuesList={addNumberToList}
             />
           }
         </div>
-      }
-      {<div>{<TotalValue valuesList={valuesList} />}</div>}
+        <div className="row">
+          {
+            <NumberList
+              valuesList={valuesList}
+              removeNumberFromList={removeNumberFromList}
+            />
+          }
+        </div>
+        <div className="row">{<TotalValue valuesList={valuesList} />}</div>
+      </div>
     </div>
   );
 };

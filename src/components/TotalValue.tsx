@@ -13,9 +13,9 @@ const TotalValue = (props: AppProps): JSX.Element => {
   };
 
   return (
-    <div>
-      <p>Total Value</p>
-      {renderTotal()}
+    <div className="ui column">
+      <div className="ui medium header">Total Value</div>
+      <p>{renderTotal()}</p>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddNumber.css';
 
 interface AppProps {
   valuesList: number[];
@@ -21,19 +22,28 @@ const AddNumber = (props: AppProps): JSX.Element => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => {
-          const newValue = e.target.value;
-          if (regexp.test(newValue)) {
-            setValue(e.target.value);
-          }
-        }}
-      ></input>
-      <button>Add Number</button>
-    </form>
+    <>
+      <div className="ui column">
+        <div className="ui input">
+          <input
+            className="ui grid two columns"
+            type="text"
+            value={value}
+            onChange={(e) => {
+              const newValue = e.target.value;
+              if (regexp.test(newValue)) {
+                setValue(e.target.value);
+              }
+            }}
+          ></input>
+        </div>
+      </div>
+      <div className="ui column ">
+        <button className="ui primary button" onClick={submitHandler}>
+          Add Number
+        </button>
+      </div>
+    </>
   );
 };
 

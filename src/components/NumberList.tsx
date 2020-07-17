@@ -21,25 +21,35 @@ const NumberList = (props: AppProps): JSX.Element => {
     setActiveButton(selectedButton);
   };
 
+  const renderDeleteButton = () => {
+    if (props.valuesList.length !== 0) {
+      return (
+        <button className="ui button" onClick={() => deleteSelected(selected)}>
+          Delete Selected
+        </button>
+      );
+    }
+  };
+
   return (
-    <div>
-      <ul>
+    <>
+      <div className="ui column">
         {props.valuesList.map((value, index) => {
           return (
             <button
               key={index}
               onClick={() => handleSelected(value, index.toString())}
-              className={`${
-                activeButton === index.toString() ? 'active-color' : null
+              className={`ui button ${
+                activeButton === index.toString() ? 'primary' : null
               }`}
             >
               {value}
             </button>
           );
         })}
-      </ul>
-      <button onClick={() => deleteSelected(selected)}>Delete Selected</button>
-    </div>
+      </div>
+      <div className="ui column">{renderDeleteButton()}</div>
+    </>
   );
 };
 
