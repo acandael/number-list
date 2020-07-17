@@ -3,6 +3,8 @@ import AddNumber from './AddNumber';
 import NumberList from './NumberList';
 import TotalValue from './TotalValue';
 
+import './App.css';
+
 const App = (): JSX.Element => {
   const [valuesList, setValuesList] = useState<number[]>([]);
 
@@ -32,7 +34,7 @@ const App = (): JSX.Element => {
             <div className="ui medium header">My Sum</div>
           </div>
         </div>
-        <div className="row">
+        <div className="four column row">
           {
             <AddNumber
               valuesList={valuesList}
@@ -40,7 +42,7 @@ const App = (): JSX.Element => {
             />
           }
         </div>
-        <div className="row">
+        <div className="four column row">
           {
             <NumberList
               valuesList={valuesList}

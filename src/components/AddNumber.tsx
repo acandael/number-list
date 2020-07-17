@@ -26,7 +26,7 @@ const AddNumber = (props: AppProps): JSX.Element => {
       <div className="ui column">
         <div className="ui input">
           <input
-            className="ui grid two columns"
+            className="ui two columns"
             type="text"
             value={value}
             onChange={(e) => {
@@ -43,6 +43,8 @@ const AddNumber = (props: AppProps): JSX.Element => {
           Add Number
         </button>
       </div>
+      <div className="ui column"></div>
+      <div className="ui column"></div>
     </>
   );
 };

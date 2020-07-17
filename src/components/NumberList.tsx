@@ -49,6 +49,8 @@ const NumberList = (props: AppProps): JSX.Element => {
         })}
       </div>
       <div className="ui column">{renderDeleteButton()}</div>
+      <div className="ui column"></div>
+      <div className="ui column"></div>
     </>
   );
 };
