@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
     setValuesList((prev) => prev.concat(num));
   };
 
-  const removeFirstFoundval = (arr: number[], num: number): number[] => {
+  const removeFirstFoundVal = (arr: number[], num: number): number[] => {
     const idx = arr.indexOf(num);
 
     if (idx === -1) {
@@ -23,7 +23,7 @@ const App = (): JSX.Element => {
   };
 
   const removeNumberFromList = (num: number) => {
-    setValuesList((prev) => removeFirstFoundval(prev, num));
+    setValuesList((prev) => removeFirstFoundVal(prev, num));
   };
 
   return (
