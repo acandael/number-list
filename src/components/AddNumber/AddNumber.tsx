@@ -15,7 +15,7 @@ const AddNumber = (props: AppProps): JSX.Element => {
     props.setValuesList(number);
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = (event: React.FormEvent<EventTarget>) => {
     event.preventDefault();
     addNumber(value);
     setValue('');

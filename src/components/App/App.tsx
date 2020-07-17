@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import AddNumber from './AddNumber';
-import NumberList from './NumberList';
-import TotalValue from './TotalValue';
+import AddNumber from '../AddNumber/AddNumber';
+import NumberList from '../NumberList/NumberList';
+import TotalValue from '../TotalValue/TotalValue';
 
 import './App.css';
 
